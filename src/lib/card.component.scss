@@ -1,46 +1,43 @@
 @use 'sass:math';
+@import '~@ngx-tc/base/src/assets/scss/base.scss';
 
-$_module: 10px;
-$_main-fs: 14px;
-$_module-rem: math.div($_module, $_main-fs) * 1rem;
-$_shape: 6px;
-$_shadow: 0 18px 24px rgba(#000,.12);
-$_title-fs: 2rem;
-$_title-fw: 500;
-
-$_types: (
-  default: (
-    bg: transparent,
-    color: inherit
-  ),
-  accent: (
-    bg: #336cfb,
-    color: #fff
-  ),
-  success: (
-    bg: #b7ce63,
-    color: #000,
-  ),
-  info: (
-    bg: #64B5F6,
-    color: #000,
-  ),
-  warning: (
-    bg: #e9e165,
-    color: #000,
-  ),
-  error: (
-    bg: #ed5564,
-    color: #fff,
-  )
-);
+$_types: ('default', 'accent', 'success', 'info', 'warning', 'error');
 
 :host {
+  --tc-card-fs: var(--tc-base-fs);
+  --tc-card-ff: var(--tc-base-ff);
+  --tc-card-fw: var(--tc-base-fw);
+  --tc-card-module-rem: var(--tc-base-module-rem);
+  --tc-card-lh: var(--tc-base-lh);
+  --tc-card-shape: var(--tc-base-shape);
+  --tc-card-shadow: var(--tc-base-shadow);
+  --tc-card-margin: 0 0 calc(var(--tc-card-module-rem) * 4);
+  --tc-card-title-fs: 2rem;
+  --tc-card-title-fw: 500;
+  --tc-card-header-bg: transparent;
+  --tc-card-header-padding: var(--tc-card-module-rem) calc(var(--tc-card-module-rem) * 2) 0;
+  --tc-card-content-padding: calc(var(--tc-card-module-rem) * 2);
+
+  // colors
+  --tc-card-default-bg: #fff;
+  --tc-card-default-color: inherit;
+  --tc-card-accent-bg: var(--tc-color-accent);
+  --tc-card-accent-color: var(--tc-color-accent-contrast);
+  --tc-card-success-bg: var(--tc-color-success);
+  --tc-card-success-color: var(--tc-color-success-contrast);
+  --tc-card-info-bg: var(--tc-color-info);
+  --tc-card-info-color: var(--tc-color-info-contrast);
+  --tc-card-warning-bg: var(--tc-color-warning);
+  --tc-card-warning-color: var(--tc-color-warning-contrast);
+  --tc-card-error-bg: var(--tc-color-error);
+  --tc-card-error-color: var(--tc-color-error-contrast);
+
   background: transparent 50% 50% no-repeat;
   background-size: cover;
-  border-radius: $_shape;
+  border-radius: var(--tc-card-shape);
+  box-shadow: var(--tc-card-shadow);
 	display: block;
-	margin-bottom: $_module-rem * 4;
+	margin: var(--tc-card-margin);
 	position: relative;
 
   .card-img {
@@ -52,20 +49,20 @@ $_types: (
     margin: 0;
 
     .card-title {
-      font-size: $_title-fs;
-      font-weight: $_title-fw;
+      font-size: var(--tc-card-title-fs);
+      font-weight: var(--tc-card-title-fw);
       margin: 0;
     }
   }
+  .card-header {
+    background: var(--tc-card-header-bg);
+    padding: var(--tc-card-header-padding);
+  }
   .card-content {
     display: block;
-    padding: ($_module-rem * 2) 0 0;
+    padding: var(--tc-card-content-padding);
     position: relative;
     width: 100%;
-
-    &:first-child {
-      padding-top: 0;
-    }
   }
   .bg-image {
     border-radius: inherit;
@@ -80,40 +77,19 @@ $_types: (
     height: auto;
   }
 
-  @each $type, $color in $_types {
+  @each $type in $_types {
     &.card-#{$type} {
-      background: map-get($color, bg);
-      box-shadow: $_shadow;
-      color: map-get($color, color);
+      background: var(--tc-card-#{$type}-bg);
+      color: var(--tc-card-#{$type}-color);
 
-      .card-header {
-        padding: $_module-rem ($_module-rem * 2) 0;
-      }
-      .card-content {
-        padding: $_module-rem * 2;
-      }
       &.outline {
-        border-color: map-get($color, bg);
+        border-color: var(--tc-card-#{$type}-bg);
       }
-    }
-  }
-  &.custom-bg-color,
-  &.custom-border-color,
-  &.custom-gradient,
-  &.outline,
-  &.bg-image {
-    box-shadow: $_shadow;
-
-    .card-header {
-      padding: $_module-rem ($_module-rem * 2) 0;
-    }
-    .card-content {
-      padding: $_module-rem * 2;
     }
   }
 	&.outline {
 		background: none;
-    border: 1px solid main-palette(500);
+    border: toRem(1) solid currentColor;
     color: inherit;
 	}
 }

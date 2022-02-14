@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CardComponent } from './card.component';
 
+import { TcBaseModule } from '@ngx-tc/base';
+
+import { CardComponent } from './card.component';
 
 
 @NgModule({
@@ -9,10 +11,12 @@ import { CardComponent } from './card.component';
     CardComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    TcBaseModule
   ],
   exports: [
-    CardComponent
+    CardComponent,
+    TcBaseModule
   ]
 })
 export class TcCardModule { }

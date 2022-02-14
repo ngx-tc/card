@@ -11,12 +11,13 @@ export class CardComponent {
   };
   @HostBinding('class.outline') @Input() outline: boolean;
   @HostBinding('class.bg-image') @Input() bgImg: string;
+  @HostBinding('class.card-default') get viewDefault() { return !this.view || this.view === 'default'; }
   @HostBinding('class.card-info') get viewInfo() { return this.view === 'info'; }
   @HostBinding('class.card-accent') get viewAccent() { return this.view === 'accent'; }
   @HostBinding('class.card-success') get viewSuccess() { return this.view === 'success'; }
   @HostBinding('class.card-warning') get viewWarning() { return this.view === 'warning'; }
   @HostBinding('class.card-error') get viewError() { return this.view === 'error'; }
-  @HostBinding('class.text-right') get rightAlign() { return this.align === 'right'; }
+  @HostBinding('class.text-end') get rightAlign() { return this.align === 'end'; }
   @HostBinding('class.text-center') get centerAlign() { return this.align === 'center'; }
   @HostBinding('style.backgroundImage') get bgImage() {
     return !this.gradient ? (this.bgImg ? `url(${this.bgImg})` : null) : this.gradient;
