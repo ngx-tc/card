@@ -1,7 +1,7 @@
 @use 'sass:math';
 @import '~@ngx-tc/base/src/assets/scss/base.scss';
 
-$_types: ('default', 'accent', 'success', 'info', 'warning', 'error');
+$_types: ('primary', 'accent', 'success', 'info', 'warning', 'error');
 
 :host {
   --tc-card-fs: var(--tc-base-fs);
@@ -19,8 +19,8 @@ $_types: ('default', 'accent', 'success', 'info', 'warning', 'error');
   --tc-card-content-padding: calc(var(--tc-card-module-rem) * 2);
 
   // colors
-  --tc-card-default-bg: #fff;
-  --tc-card-default-color: inherit;
+  --tc-card-primary-bg: #fff;
+  --tc-card-primary-color: inherit;
   --tc-card-accent-bg: var(--tc-color-accent);
   --tc-card-accent-color: var(--tc-color-accent-contrast);
   --tc-card-success-bg: var(--tc-color-success);
@@ -89,7 +89,7 @@ $_types: ('default', 'accent', 'success', 'info', 'warning', 'error');
   }
 	&.outline {
 		background: none;
-    border: toRem(1) solid currentColor;
+    border: #{toRem(1)} solid currentColor;
     color: inherit;
 	}
 }
