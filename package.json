@@ -1,20 +1,21 @@
 {
   "name": "@ngx-tc/card",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "author": "type0code",
   "license": "MIT",
-  "description": "Angular UI components library",
-  "keywords": ["angular", "angular UI", "angular components", "ng", "ngx", "angular box", "angular cards", "angular card"],
+  "description": "A card component is a versatile UI element that can effectively showcase a variety of content related to a single subject. It is typically used to display bite-sized pieces of information, such as product features, news articles, or user profiles, in a visually appealing and easily digestible format. A card can contain a mix of text, images, icons, and other multimedia elements, arranged in a hierarchy that draws the viewer's attention to the most important information first. The size and layout of a card can be customized to fit different screen sizes and resolutions, making it an ideal choice for responsive web design.",
+  "keywords": ["angular", "angular UI", "angular components", "ng", "ngx", "angular box", "angular cards", "angular card", "content card"],
   "repository": "https://github.com/ngx-tc/card",
+  "homepage": "http://tc-library.type-code.pro/#/components/cards",
   "config": {
     "access": "public"
   },
   "peerDependencies": {
-    "@angular/common": "^14.0.6",
-    "@angular/core": "^14.0.6",
-    "@ngx-tc/base": "^0.0.16"
+    "@angular/common": "^15.1.5",
+    "@angular/core": "^15.1.5",
+    "@ngx-tc/base": "^0.0.17"
   },
   "dependencies": {
-    "tslib": "^2.4.0"
+    "tslib": "^2.5.0"
   }
 }
