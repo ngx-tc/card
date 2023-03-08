@@ -37,6 +37,10 @@ $_types: ('primary', 'accent', 'success', 'info', 'warning', 'error');
   border-radius: var(--tc-card-shape);
   box-shadow: var(--tc-card-shadow);
 	display: block;
+  font-size: var(--tc-card-fs);
+  font-family: var(--tc-card-ff);
+  font-weight: var(--tc-card-fw);
+  line-height: var(--tc-card-lh);
 	margin: var(--tc-card-margin);
 	position: relative;
 
