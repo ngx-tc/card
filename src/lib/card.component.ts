@@ -1,6 +1,6 @@
 import { Component, HostBinding, Input } from '@angular/core';
 
-import { TcView, view } from '@ngx-tc/base';
+import { TcView, View, view, Align } from '@ngx-tc/base';
 
 @Component({
   selector: 'tc-card',
@@ -25,10 +25,10 @@ export class CardComponent implements TcView {
     return !this.gradient ? (this.bgImg ? `url(${this.bgImg})` : null) : this.gradient;
   }
 
-  @Input() align: string;
+  @Input() align: Align;
   @Input() title: string;
   @Input() img: string;
   @Input() padding: number;
-  @Input('view') tcView: string | view = view.primary;
+  @Input('view') tcView: View = view.primary;
   @Input('tcGradient') gradient: string[];
 }
