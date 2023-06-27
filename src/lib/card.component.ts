@@ -1,6 +1,6 @@
 import { Component, HostBinding, Input } from '@angular/core';
 
-import { TcView, View, view, Align } from '@ngx-tc/base';
+import { TcView, View, view, Align, align } from '@ngx-tc/base';
 
 @Component({
   selector: 'tc-card',
@@ -19,13 +19,14 @@ export class CardComponent implements TcView {
   @HostBinding('class.card-success') get viewSuccess() { return this.tcView === view.success; }
   @HostBinding('class.card-warning') get viewWarning() { return this.tcView === view.warning; }
   @HostBinding('class.card-error') get viewError() { return this.tcView === view.error; }
-  @HostBinding('class.text-end') get rightAlign() { return this.align === 'end'; }
+  @HostBinding('class.text-start') get startAlign() { return this.align === 'start'; }
+  @HostBinding('class.text-end') get endAlign() { return this.align === 'end'; }
   @HostBinding('class.text-center') get centerAlign() { return this.align === 'center'; }
   @HostBinding('style.backgroundImage') get bgImage() {
     return !this.gradient ? (this.bgImg ? `url(${this.bgImg})` : null) : this.gradient;
   }
 
-  @Input() align: Align;
+  @Input() align: Align = align.start;
   @Input() title: string;
   @Input() img: string;
   @Input() padding: number;
