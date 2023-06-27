@@ -1,4 +1,4 @@
-## About
+# About
 
 @ngx-tc/card is an Angular library that provides developers with the ability to easily create customizable cards in their applications. The library is designed to be easy to use and allows developers to create responsive and adaptive cards that fit their specific needs.
 

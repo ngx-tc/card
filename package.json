@@ -1,6 +1,6 @@
 {
   "name": "@ngx-tc/card",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "author": "type0code",
   "license": "MIT",
   "description": "A card component is a versatile UI element that can effectively showcase a variety of content related to a single subject. It is typically used to display bite-sized pieces of information, such as product features, news articles, or user profiles, in a visually appealing and easily digestible format. A card can contain a mix of text, images, icons, and other multimedia elements, arranged in a hierarchy that draws the viewer's attention to the most important information first. The size and layout of a card can be customized to fit different screen sizes and resolutions, making it an ideal choice for responsive web design.",
@@ -11,11 +11,11 @@
     "access": "public"
   },
   "peerDependencies": {
-    "@angular/common": "^15.1.5",
-    "@angular/core": "^15.1.5",
-    "@ngx-tc/base": "^1.0.1"
+    "@angular/common": "^16.1.2",
+    "@angular/core": "^16.1.2",
+    "@ngx-tc/base": "^1.2.0"
   },
   "dependencies": {
-    "tslib": "^2.5.0"
+    "tslib": "^2.6.0"
   }
 }
